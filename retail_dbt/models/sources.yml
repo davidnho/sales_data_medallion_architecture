@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: retail
+    schema: main
+    tables:
+      - name: bronze_sales
+      - name: bronze_customers
+      - name: bronze_products
