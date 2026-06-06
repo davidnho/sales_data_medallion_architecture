@@ -15,7 +15,7 @@ print(DBT_DIR)
 # CONFIGURATION
 # ==========================================
 
-DB_PATH = "../duckdb/retail.duckdb"
+DB_PATH = "duckdb/retail.duckdb"
 
 logging.basicConfig(
     filename="logs/pipeline.log",
@@ -38,24 +38,24 @@ def load_bronze():
 
     conn = duckdb.connect(DB_PATH)
 
-    sales = pd.read_csv("../data/sales.csv")
-    customers = pd.read_csv("../data/customers.csv")
-    products = pd.read_csv("../data/products.csv")
+    sales = pd.read_csv("data/sales.csv")
+    customers = pd.read_csv("data/customers.csv")
+    products = pd.read_csv("data/products.csv")
     
     
     conn.execute("""
     CREATE OR REPLACE TABLE bronze_sales AS
-    SELECT * FROM read_csv_auto('../data/sales.csv')
+    SELECT * FROM read_csv_auto('data/sales.csv')
     """)
 
     conn.execute("""
     CREATE OR REPLACE TABLE bronze_customers AS
-    SELECT * FROM read_csv_auto('../data/customers.csv')
+    SELECT * FROM read_csv_auto('data/customers.csv')
     """)
 
     conn.execute("""
     CREATE OR REPLACE TABLE bronze_products AS
-    SELECT * FROM read_csv_auto('../data/products.csv')
+    SELECT * FROM read_csv_auto('data/products.csv')
     """)
     conn.close()
 
