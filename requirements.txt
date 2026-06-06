@@ -12,5 +12,10 @@ duckdb==1.3.2
 pandas==2.3.1
 pyarrow==21.0.0
 
+# Prefect
+prefect==3.7.2
+prefect-dbt==0.7.24
+prefect-shell==0.3.5
+
 # Optional (useful for local development)
 jupyter==1.1.1
