@@ -1,4 +1,7 @@
 # DBT
+Faker==40.21.0
+
+# DBT
 dbt-core==1.10.5
 dbt-duckdb==1.10.0
 
